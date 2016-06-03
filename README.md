@@ -12,21 +12,22 @@
 - **HTML** : Jade, Mustache, Handlebars... and React.js
 - **Javascript** : ES2015, Vanilla script... and Polyfill(for Cross Browsing)
 - **TEST-DATA** : JSON, MongoDB, Deployd 서버 구축
+- **Polymer**
 
 ### 구성원
 | github ID    | 구성원 | 담당분야  | 비고        |
 | ------------ |:------:|:---------:|------------:|
-| yikl1004     | 명기   |           | Key Player  |
+| yikl1004     | 명기   | JS        | Key Player  |
 |              | 미경   |           | Advisor     |
-|              | 희욱   |           | Player      |
+|              | 희욱   | SASS(CSS) | Player      |
 |              | 현아   |           | Player      |
 
 ### KPI 진행방식
-- 정해봅시다.
-- 2주에 한번 모이는건?
-- 모일 때 마다 각각의 분야에 맞는 과제 선정하기?
-- 모이지 못할 경우 온라인 모임은 어떻게 생각하시는지?
+- 위에서 정한 담당분야에 맞는 과제를 스스로 선정하기
+- 2주에 한번 (일단은 `월요일`로...)
+- 각 목차에 맞는 과제선정
+- 모이지 못할 경우 : 해당인원은 배제 후 차 후 공지
 
 ### 규칙
-- 정해 봅시다.
+- 진행하면서 정하는 걸로 하겠습니다.
 
