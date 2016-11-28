@@ -2,6 +2,6 @@
 
 ## 1. [Introduction](./docs/1_introduction.md) :서론
 
-## 2. [advance preparations](./docs/2_advance preparations.md) : 사전준비사항
+## 2. [advance preparations](./docs/2_advance_preparations.md) : 사전준비사항
 
 ## 3. [composit project](./docs/3_composite_project.md) : 프로젝트 구성
