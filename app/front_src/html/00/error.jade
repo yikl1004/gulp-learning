@@ -1,0 +1,19 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록";
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div#wrap
+			div#container
+
+				div.error
+					p 
+						| 일시적인 오류로 인해
+						br
+						| 서비스를 이용할 수 없습니다.
+					a.btn_reload(href='javascript:location.reload();') 다시시도
+
+
+		// ui script load
+		include ../../inc/scripts.jade

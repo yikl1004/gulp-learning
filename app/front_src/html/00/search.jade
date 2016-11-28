@@ -1,0 +1,145 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.container
+				ul.tab.col3.multiline
+					li.active
+						a(href='javascript:;') 전체
+					li
+						a(href='javascript:;') 이벤트
+					li
+						a(href='javascript:;') 뷰티뉴스
+					li
+						a(href='javascript:;') 제품도서관
+					li
+						a(href='javascript:;') 세일즈팁
+					li
+						a(href='javascript:;') 노하유 공유
+				div.search
+					div.section
+						h2.tit.small
+							span 이벤트
+							span.cnt 19건
+							a.all_view(href='javascript:;')
+								span 전체보기
+						div.img_list.type02
+							ul
+								- for ( var i = 0; i < 3; i++ )
+									li(class= lifeList[i].recommand ? 'recommand' : '')
+										//- a(href='#{path.html}05/life_view.html')
+										a(href='toapp:appviewchange:detailview:라이프:/publish/html/05/life_view.html')
+											span(class= lifeList[i].video ? 'thumb video' : 'thumb')
+												span.img(style='background-image: url(#{path.img}dummy/' + lifeList[i].img+');')
+											div(class= lifeList[i].tag.length==0 ? 'info no_tag' : 'info')
+												if ( lifeList[i].tag.length > 0 )
+													span.tags
+														- for ( var j = 0; j < lifeList[i].tag.length; j++ )
+															span(class= 'tag ' + lifeList[i].tag[j].klass)= lifeList[i].tag[j].text
+												p.title= lifeList[i].title
+												span.etc
+													span.read_cnt= lifeList[i].read
+													span.like_cnt= lifeList[i].like
+													span.reply_cnt= lifeList[i].reply
+					
+					div.section
+						h2.tit.small
+							span 뷰티뉴스
+							span.cnt 19건
+							a.all_view(href='javascript:;')
+								span 전체보기
+						div.photo_list
+							- for(var i=1; i <= hotissueList.length; i++)
+								a(href='#{path .html}01/beautynews_view.html')
+									span(class= hotissueList[i -1].video ? 'thumb video' : 'thumb')
+										span.img(style='background-image:url(#{path.img}dummy/video_thumb.jpg);')
+									div.info
+										h3.tit
+											span.subject= hotissueList[i-1].title
+
+					div.section
+						h2.tit.small
+							span 제품도서관
+							span.cnt 19건
+							a.all_view(href='javascript:;')
+								span 전체보기
+						div.img_list
+							ul
+								- for ( var i = 0; i < 3; i++ )
+									li(class= prodList[i].recommand ? 'recommand' : '')
+										a(href='#{path.html}02/product_info_view.html')
+											span(class= prodList[i].video ? 'thumb video' : 'thumb')
+												span.img(style='background-image: url(#{path.img}dummy/' + prodList[i].img + ');')
+											div(class= prodList[i].tag== 0 ? 'info no_tag' : 'info')
+												if prodList[i].tag.length != 0
+													span.tags
+														- for ( var j = 0; j < prodList[i].tag.length; j++ )
+															span(class= 'tag ' + prodList[i].tag[j].klass)= prodList[i].tag[j].text
+												p.title= prodList[i].title
+												span.etc
+													span.read_cnt= prodList[i].read
+													span.like_cnt= prodList[i].like
+													span.reply_cnt= prodList[i].reply
+
+					div.section
+						h2.tit.small
+							span 세일즈팁
+							span.cnt 5건
+							a.all_view(href='javascript:;')
+								span 전체보기
+						div.img_list.type02
+							ul
+								- for ( var i = 0; i < 3; i++ )
+									li(class= lifeList[i].recommand ? 'recommand' : '')
+										//- a(href='#{path.html}05/life_view.html')
+										a(href='toapp:appviewchange:detailview:라이프:/publish/html/05/life_view.html')
+											span(class= lifeList[i].video ? 'thumb video' : 'thumb')
+												span.img(style='background-image: url(#{path.img}dummy/' + lifeList[i].img + ');')
+											div(class= lifeList[i].tag.length==0 ? 'info no_tag' : 'info')
+												if ( lifeList[i].tag.length > 0 )
+													span.tags
+														- for ( var j = 0; j < lifeList[i].tag.length; j++ )
+															span(class= 'tag ' + lifeList[i].tag[j].klass)= lifeList[i].tag[j].text
+												p.title= lifeList[i].title
+												span.etc
+													span.read_cnt= lifeList[i].read
+													span.like_cnt= lifeList[i].like
+													span.reply_cnt= lifeList[i].reply
+
+					div.section
+						h2.tit.small
+							span 노하우 공유
+							span.cnt 5건
+							a.all_view(href='javascript:;')
+								span 전체보기
+						ul.latest_list
+							- for(var i=0; i<4; i++)
+								li
+									a(href="javascript:;")= latest_txt_list[i]
+
+
+		// ui script load
+		include ../../inc/scripts.jade
+		script.
+			$(function(){
+				$('.img_list').each(function(){
+					if ( $(this).hasClass('type02') ) {
+						$(this).find('.thumb').css({
+							height: pixelRatio( '339:245', $(this).find('.thumb').width(), 'y' )
+						});
+					} else {
+						$(this).find('.thumb').css({
+							height: pixelRatio( '290:290', $(this).find('.thumb').width(), 'y' )
+						});
+					}
+				});
+					
+				$('.photo_list .thumb').css({
+					height: pixelRatio( '900:420', $('.photo_list .thumb').width(), 'y' )
+				});
+			});

@@ -1,0 +1,130 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div#wrap
+			div.view_page.notice
+				h1.view_head
+					span 2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!
+					span.date 2015.03.14 ~ 2015.06.20
+				div.view_content
+					img(src='#{path.img}dummy/view_img01.jpg', alt='')
+					p 
+						| 안녕하세요 방판교육팀 입니다.안정적인 서비스제 공을 위하여3월 15일(화) 00:00~06:00 까지 시스템점검을진행합니다.
+						br
+						br
+						| 점검중에는 뷰티스퀘어 접속이 불가하니 유의해 주시기 바랍니다.
+						br
+						br
+						| 서비스 제공에 불편을 드려 죄송합니다.
+
+			div.container
+				ul.poll_list
+					li
+						h2.tit.small
+							span 질문 1
+						div.question
+							label(for='q1') 오아시스 에센스로 거듭난 셀 에센스는 몇 가지 활성 액티베이터 셀-바이오 플루이드 싱크 2.0™을 담았을까요?
+							input(type='text', maxLength='200', id='q1')
+					li
+						h2.tit.small
+							span 질문 2
+						div.question
+							label(for='q2') 헤라 셀 에센스는 헤라의 몇 번 에센스 일까요?
+							input(type='text', maxLength='200', id='q2')
+					li
+						h2.tit.small
+							span 질문 3
+						div.question
+							label(for='q3') 헤라 셀 에센스 응원을 남겨주세요.
+							input(type='text', maxLength='200', id='q3')
+				p.msg ※ 정답을 입력하신 후 “이벤트 참여하기＂버튼을 눌러주세요.
+
+				a.btn_event(href='javascript:;', onclick="$.alert('안녕하세요!!')")
+					span 이벤트 참여하기
+
+				h2.tit.small
+					span 이벤트 참여
+					span.cnt 19
+				ul.reply_list
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user02.jpg);')
+								span.ir 장재호
+							span.info
+								span.grade.g2 여신
+								span.user_name 장재호
+									span.branch 신구로 (영)
+							span.update_time.today 2시간 전
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user03.jpg);')
+								span.ir 강감찬
+							span.info
+								span.grade.g6 뷰티스타
+								span.user_name 강감찬
+									span.branch 신구로 (영)
+							span.update_time 2월 13일
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user02.jpg);')
+								span.ir 장재호
+							span.info
+								span.grade.g2 여신
+								span.user_name 장재호
+									span.branch 신구로 (영)
+							span.update_time.today 2시간 전
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user03.jpg);')
+								span.ir 강감찬
+							span.info
+								span.grade.g6 뷰티스타
+								span.user_name 강감찬
+									span.branch 신구로 (영)
+							span.update_time 2월 13일
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+
+		// ui script load
+		include ../../inc/scripts.jade

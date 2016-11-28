@@ -1,0 +1,44 @@
+include ../../inc/main-data.jade
+- var subTitle = "제품정보 | 목록";
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div#container
+				ul.tab.col2
+						li.active
+							a(href='javascript:;') 진행중인 이벤트
+						li
+							a(href='javascript:;') 당첨자 발표
+				div.img_list.type02
+					ul
+						li
+							a(href='toapp:appviewchange:detailview:/publish/html/05/life_view.html')
+								span(class='thumb')
+									img(src='#{path.img}dummy/' + lifeList[1].img)
+								div.info
+									span.tags
+										span.tag.new new
+										span.tag.event.g4 쌩얼등급 이상
+									p.title= lifeList[1].title
+									span.term 2016.02.01 ~ 2016.02.29
+						- for ( var i = 0; i < lifeList.length; i++ )
+							li(class= lifeList[i].recommand ? 'recommand' : '')
+								//- a(href='#{path.html}05/life_view.html')
+								a(href='toapp:appviewchange:detailview:/publish/html/05/life_view.html')
+									span(class= lifeList[i].video ? 'thumb video' : 'thumb')
+										img(src='#{path.img}dummy/' + lifeList[i].img)
+									div(class= lifeList[i].tag.length==0 ? 'info no_tag' : 'info')
+										if ( lifeList[i].tag.length > 0 )
+											span.tags
+												- for ( var j = 0; j < lifeList[i].tag.length; j++ )
+													span(class= 'tag ' + lifeList[i].tag[j].klass)= lifeList[i].tag[j].text
+										p.title= lifeList[i].title
+										span.term 2016.02.01 ~ 2016.02.29
+				include ../../inc/more_and_top.jade
+
+		// ui script load
+		include ../../inc/scripts.jade

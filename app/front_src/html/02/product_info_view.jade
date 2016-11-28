@@ -1,0 +1,222 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub.font_size_3
+		div#wrap
+			div.view_page
+				h1.view_head.brand.hera
+					span.ir 헤라
+				div#videoPlayer.video_wrap
+					//- a.video
+					video(poster='#{path.img}dummy/view_img01.jpg', controls, preload='metadata')
+						//- source(src='#{path.img}dummy/mov_bbb.mp4')
+						source(src='#{path.img}dummy/video.mp4')
+				script.
+					//progress 이벤트 구현(비디오 다운로드 현황 표시)
+					var video = document.querySelector('#videoPlayer > video');
+					//- var percent = null;
+					var videoLoadCtrl = false;
+
+					console.log(video);
+
+					video.oncanplay = function(){
+						console.log('canplay');
+						console.log('ready state', video.readyState);
+						videoLoadCtrl = true;
+						console.log(videoLoadCtrl);
+					};
+					//- video.onloadstart = function(){
+					//- 	console.log('load start');
+					//- };
+					video.onplay = function( event ){
+						console.log('play');
+						//- console.log(video.buffered.end(0));
+						console.log('ready State', video.readyState);
+						console.log('video Load Ctrl', videoLoadCtrl);
+						$(video).parent().addClass('play');
+						console.log('percent', (( video.buffered.end(0) / video.duration ) * 100) + '%' );
+						if ( videoLoadCtrl == true) {
+							$(video).parent().removeClass('play');
+						}
+					};
+					video.onprogress = function(){
+						//- console.log('progress');
+						//- console.log(videoLoadCtrl);
+						if ( videoLoadCtrl == true ) {
+							$(video).parent().removeClass('play');
+						}
+					};
+					video.onloadedmetadata = function(){
+						console.log('loaded metadata');
+					};
+
+					//- var startBuffer = function() {
+					//-     var maxduration = video.duration;
+					//-     var currentBuffer = video.buffered.end(0);
+					//-     var percentage = 100 * currentBuffer / maxduration;
+					//-     console.log(percentage);
+					 
+					//-     if(currentBuffer < maxduration) {
+					//-         setTimeout(startBuffer, 500);
+					//-     }
+					//- };
+					//- video.onprogress = function(e){
+					//- 	//- console.dir(video);
+					//- 	console.log(video.readyState);
+					//- 	console.log(video.metadata);
+					//- 	console.log(video.error);
+					//- 	//- startBuffer();
+					//- };
+
+					//- video.onprogress = function(e){
+					//- console.dir(video.buffered);
+					//- 	if(this.networkState == 2){
+					//- 		//- console.log(e.loaded + "/" + e.total + "byte");
+					//- 		if ( video.buffered.length > 0 ) {
+					//- 			var percent = ( video.buffered.end(0) / video.duration ) * 100;
+					//- 			console.log(percent + '%');
+					//- 		}
+					//- 	} else if(this.networkState == 3){
+					//- 		console.log("완료");
+					//- 	}
+					//- };
+				div.product_img
+					img(src='#{path.img}dummy/prod_view_img01.jpg')
+				div.view_content
+					div.product_info
+						span.tags
+							span.tag.new new
+						h2.product_title 화이트 프로그램 이펙터 프로그램
+						span.spec
+							span.price 45,000 원
+							span.unit /
+							span.weight 17g
+					div.cnt_bookmark_area
+						span.read_cnt 1,586
+						a.like_cnt(href='javascript:;') 152
+						a.bookmark(href='javascript:;') 보관함
+				div.util_btns
+					a.talk(href='javascript:;')
+						span 카카오톡
+					a.story(href='javascript:;')
+						span 카카오스토리
+
+			div.container
+				// 제품소개 : S
+				h2.tit.small
+					span 제품소개
+				div.editor_content
+					img(src='#{path.img}dummy/editor_content_img.jpg')
+				//// 제품소개 : E
+				h2.tit.small
+					span 댓글
+					span.cnt 19
+					a.btn_normal(href='#{path.html}05/life_reply_write.html') 댓글쓰기
+				div.no_data
+					p 등록된 댓글이 없습니다.
+				ul.reply_list
+					li.admin
+						span.user_info
+							span.thumb.mask
+								span.img(style='background-image: url(#{path.img}com/admin_photo.png);')
+									span.ir 관리자
+							span.info
+								span.user_name 뷰티스퀘어
+							span.like_cnt 152
+							span.update_time.today 2시간 전
+						p.txt 방판교육팀 담당자입니다. 여러분들에 소중한 의견반영 하도록 하겠습니다~!
+					li.best
+						span.user_info
+							span.thumb.mask
+								span.img(style='background-image: url(#{path.img}dummy/user01.jpg);')
+									span.ir 홍길동
+							span.info
+								span.grade.g1 여왕
+								span.user_name 홍길동
+									span.branch 신구로 (영)
+							span.like_cnt 152
+							span.update_time.today 30분 전
+						p.txt 새로 나온 시그니아 앰플은 정말 좋아요. 고객님들에게 샘플만 드려도 반응이 다르답니다.새로 나온 시그니아 앰플은 정말 좋아요. 고객님들에게 샘플만 드려도 반응이 다르답니다.
+					li
+						span.user_info
+							span.thumb.mask
+								span.img(style='background-image: url(#{path.img}dummy/user02.jpg);')
+									span.ir 장재호
+							span.info
+								span.grade.g2 여신
+								span.user_name 장재호
+									span.branch 신구로 (영)
+							span.like_cnt 152
+							span.update_time.today 2시간 전
+						p.txt 방판교육팀 담당자입니다. 여러분들에 소중한 의견반영 하도록 하겠습니다~!
+					li
+						span.user_info
+							span.thumb.mask
+								span.img(style='background-image: url(#{path.img}dummy/user03.jpg);')
+									span.ir 강감찬
+							span.info
+								span.grade.g6 뷰티스타
+								span.user_name 강감찬
+									span.branch 신구로 (영)
+							span.like_cnt 152
+							span.update_time 2월 13일
+						p.txt 방판교육팀 담당자입니다. 여러분들에 소중한 의견반영 하도록 하겠습니다~!
+				a.reply_more(href='javascript:;') 댓글 더보기
+
+				//폰트사이즈 조정
+				div.font_sizing
+					a.down 가-
+					a.up 가+
+
+				// 추천 컨텐츠 : S
+				div.section
+					h2.tit
+						span 추천 컨텐츠
+						a.all_view(href='javascript:;')
+							span 전체보기
+					div.swiper-container.scroller.type02
+						div.swiper-wrapper
+							- for(var i=1; i <= sales_note.length; i++)
+								div.swiper-slide
+									a(href='javascript:;')
+										if i==1
+											span.thumb.video
+												img(src='#{path.img}dummy/#{lifeSquare.img[i-1]}.jpg', alt='')
+										else
+											span.thumb
+												img(src='#{path.img}dummy/#{lifeSquare.img[i-1]}.jpg', alt='')
+										div.info
+											h3.tit
+												span.subject= lifeSquare.title[i-1]
+											span.etc
+												span.read_cnt 10,658
+												span.like_cnt.active 23
+				//// 추천 컨텐츠 : E
+				// 함께쓰면 좋은 제품 : S
+				div.section
+					h2.tit
+						span 함께쓰면 좋은 제품
+						a.all_view(href='javascript:;')
+							span 전체보기
+					div.swiper-container.scroller.type01
+						div.swiper-wrapper
+							- for(var i=1; i <= latest_prod.img.length; i++)
+								div.swiper-slide
+									a(href='javascript:;')
+										span.thumb
+											img(src='#{path.img}dummy/#{latest_prod.img[i-1]}.jpg', alt='')
+										div.info
+											h3.tit
+												span.subject 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+				//// 함께쓰면 좋은 제품 : E
+
+
+		// ui script load
+		include ../../inc/scripts.jade
+		script.
+			//- var alert1 = $.alert('','','event', 100);
+			//- var confirm1 = setTimeout(function(){
+			//- 	$.confirm('안녕~ 하십니까?', function(){console.log('콜백 실행')});
+			//- }, 1000);

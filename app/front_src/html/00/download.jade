@@ -1,0 +1,113 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub(style='background: #fff;')
+		div.loading
+			span.loader
+		div#wrap
+			div.app_download
+				div.app_info
+					span.icon
+						img(src='#{path.img}com/app_icon.png')
+					span.txt
+						p.name BEAUTY SQUARE 2.0
+						span.company AMOREPACIFIC
+					a.btn_app_download(href='javascript:;')
+						span 다운로드
+
+				div.swiper-container.app_guide
+					div.swiper-wrapper
+						div.swiper-slide
+							h2.guide_title
+								strong 편리해진
+								|  뷰티스퀘어 2.0
+							p.txt
+								| 간편모드와 기본모드로 골라보는 메인화면
+								br
+								| 눈이 편한 글자 크기 조절
+							div.img_wrap
+								img(src='#{path.img}com/download_guide_img01.png')
+
+						div.swiper-slide
+							h2.guide_title
+								strong 유용해진
+								|  뷰티스퀘어 2.0
+							p.txt
+								| 알짜배기 세일즈정보와 즐거움이 가득한
+								br
+								| 카운셀러 TALK 공간
+							div.img_wrap
+								img(src='#{path.img}com/download_guide_img02.png')
+
+						div.swiper-slide
+							h2.guide_title
+								strong 똑똑해진
+								|  뷰티스퀘어 2.0
+							p.txt
+								| 통합검색으로 더욱 다양하게, 
+								br
+								| 카테고리별로 더욱 디테일한 통합검색
+							div.img_wrap
+								img(src='#{path.img}com/download_guide_img03.png')
+
+					div.swiper-pagination
+					div.swiper-button-next
+					div.swiper-button-prev
+
+				div.accordian
+					a.acc_toggle(href='javascript:;')
+						span 앱 다운로드 및 실행이 안될 경우
+					div.acc_content
+						ul.guide_list
+							li
+								h3 네트워크 상태가 원활하지 않은 경우
+								p
+									span.blue 모바일 데이터 또는 와이파이 상태를 확인해주세요!
+									br
+									| 모바일 데이터 또는 와이파이를 켜주세요.
+									br
+									| 또는 네트워크 상태가 원활한 장소로 이동해주세요.
+							li
+								h3 기기 내 저장공간이 부족한 경우
+								p
+									span.blue 충분한 저장공간이 확보되었는지 확인해주세요!
+									br
+									| 안드로이드의 경우
+									span.red 00MB
+									| , iOS의 경우 
+									span.red 00MB
+									|  이상의 
+									| 공간을 확보해주세요.
+
+							li
+								h3 보안설정 변경이 필요한 경우
+								p
+									span.blue 안드로이드폰의 경우,
+									br
+									span.blue 앱 설치를 차단하도록 설정되어 있는지 확인해주세요!
+									br
+									| 기기 내 설정-개인설정-보안에서 ‘알 수 없는 소스 설치
+									br
+									| 허용’ 또는 ‘유해 요소를 지닌 앱 확인 해제’ 해주세요.
+								p
+									span.blue 아이폰(iOS 9.0 이상)의 경우, 
+									br
+									span.blue 기업용 APP 신뢰 설정을 확인해주세요!
+									br
+									| 기기 내 설정-일반-기기관리-PACIFIC Corporation에서
+									| ‘PACIFIC Corporation을 신뢰함’으로 설정해주세요.
+								p.ps
+									| 위와 같은 방법으로도 문제가 해결되지 않는다면 뷰티스퀘어 
+									| 고객센터로 연락주세요.
+
+				//- div.cs
+				//- 	a(href='tel:080-804-2004')
+				//- 		h2 고객센터
+				//- 		p.number 080-804-2004
+				//- 		span.office_hour 평일 : 09시 - 18시  /  주말 : 휴무
+
+
+		// ui script load
+		include ../../inc/scripts.jade

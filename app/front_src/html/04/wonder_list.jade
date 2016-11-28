@@ -1,0 +1,55 @@
+include ../../inc/main-data.jade
+//- var subTitle = "커뮤니티 | 칭찬합시다 | 목록";
+//- doctype html
+//- html(lang='ko')
+//- 	include ../../inc/head.jade
+//- 	body
+//- 		div.loading
+//- 			span.loader
+//- 		div#wrap
+//- 			div#container
+ul.tab.col2
+	- for( var i=0; i<community.length; i++ )
+		if i==1
+			li.active
+				a(href='javascript:;')= community[i]
+		else
+			li
+				a(href='javascript:;')= community[i]
+
+- for ( var i=0; i<praiseList.length; i++ )
+	div.fb_type
+		div.article
+			div.user_info
+				span.thumb.mask
+					span.img(style='background-image: url(#{path.img}dummy/#{praiseList[i].idPicture});')
+				div(class='info #{praiseList[i].isJob ? "" : "no_job"}')
+					span.employee
+						span.tag_and_position
+							span.grade.g1 여왕
+							if praiseList[i].isJob
+								span.position= praiseList[i].isJob
+						span.name= praiseList[i].name
+						span.branch= praiseList[i].branch
+				div.update_time.today= praiseList[i].updateTime
+			div.content
+				h3.tit
+					span= praiseList[i].title
+					span.tag.new new
+				p.txt= praiseList[i].txt
+					a.more(href='javascript:;') ...더보기
+				if praiseList[i].img
+					span.article_img
+						img(src='#{path.img}dummy/#{praiseList[i].img}')
+		div.etc_btns.col2
+			a.reply(href='javascript:;')
+				span= praiseList[i].read
+				span.ir 댓글쓰기
+			a.like(href='javascript:;')
+				span= praiseList[i].reply
+				span.ir 좋아요
+
+include ../../inc/more_and_top.jade
+
+		//- // ui script load
+		//- include ../../inc/scripts.jade

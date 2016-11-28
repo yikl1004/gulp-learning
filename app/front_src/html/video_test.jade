@@ -1,0 +1,43 @@
+include ../inc/main-data.jade
+doctype html
+html(lang='ko')
+	include ../inc/head.jade
+	//- head
+	//- 	link(href="http://vjs.zencdn.net/5.9.2/video-js.css", rel="stylesheet")
+		//- script(src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js")
+
+	body
+		//- video(id="my-video", class="video-js", controls, preload="auto", width="640", height="264", poster="MY_VIDEO_POSTER.jpg", data-setup='{"controls": true, "autoplay": false, "preload": "auto"}')
+		//- 	source(src="#{path.img}dummy/mov_bbb.mp4")
+		//- 	p.vjs-no-js To view this video please enable JavaScript, and consider upgrading to a web browser that
+		//- 	a(href="http://videojs.com/html5-video-support/", target="_blank") supports HTML5 video
+
+		//- script(src="http://vjs.zencdn.net/5.9.2/video.js")
+		video(preload="auto", controls, poster="#{path.img}dummy/life_thumb02.jpg", width="100%", height="250")
+			source(src="#{path.img}dummy/mov_bbb.mp4")
+		p Loaded : 
+			span
+		p Plated : 
+			span
+		script.
+			var video = document.querySelector('video'),
+				percentages = document.querySelectorAll('span');
+
+			function loop() {
+				var buffered = video.buffered,
+					loaded,
+					played;
+
+				if (buffered.length) {
+					loaded = 100 * buffered.end(0) / video.duration;
+					played = 100 * video.currentTime / video.duration;
+					percentages[0].innerHTML = loaded.toFixed(2);
+					percentages[1].innerHTML = played.toFixed(2);
+				}
+
+				//- setTimeout(loop, 50);
+			}
+
+			video.onprogress = function(){
+				loop();
+			}

@@ -1,0 +1,117 @@
+include ../inc/main-data.jade
+// 메인비주얼 : S
+div.swiper-container.main_visual
+	div.swiper-wrapper
+		- for(var i = 1; i <= 5; i++)
+			div.swiper-slide
+				div.img(style='background-image: url(#{path.img}main/slide0#{i}.jpg);')
+					span.ir 메인 비주얼#{i}
+	// Add Pagination
+	div.swiper-pagination
+//// 메인비주얼 : E
+
+// 뷰티뉴스 : S
+div.section
+	h2.tit
+		span 뷰티뉴스
+		a.all_view(href='javascript:;')
+			span 전체보기
+	div.video_area
+		span.thumb.video
+			span.img(style='background-image: url(#{path.img}dummy/video_thumb.jpg);', alt='동영상 썸네일')
+		a.info(href='javascript:;')
+			h3.tit 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+			span.etc
+				span.read_cnt 10,658
+				span.like_cnt 23
+//// 뷰티뉴스 : E
+// 최신 제품정보 : S
+div.section
+	h2.tit
+		span 최신 제품정보
+		a.all_view(href='javascript:;')
+			span 전체보기
+	div.swiper-container.scroller.type01
+		div.swiper-wrapper
+			- for(var i=1; i <= latest_prod.img.length; i++)
+				div.swiper-slide
+					a(href='javascript:;')
+						span.thumb
+							span.img(style='background-image: url(#{path.img}dummy/#{latest_prod.img[i-1]}.jpg);')
+						div.info
+							h3.tit
+								span.subject 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십
+								//- span.subject= latest_prod.tag[i-1] + ' ' + latest_prod.title[i-1]
+
+//// 최신 제품정보 : E
+// BEST 노하우 : S
+div.section
+	h2.tit
+		span BEST 노하우
+		a.all_view(href='javascript:;')
+			span 전체보기
+	ul.latest_list
+		- for(var i=0; i<4; i++)
+			li
+				a(href="javascript:;")= latest_txt_list[i]
+//// 나만의 세일즈노하우 : E
+// 노하우 공유 : S
+div.section
+	h2.tit
+		span 노하우 공유
+		a.all_view(href='javascript:;')
+			span 전체보기
+	div.swiper-container.scroller.type02
+		div.swiper-wrapper
+			- for(var i=1; i <= sales_note.length; i++)
+				div.swiper-slide
+					a(href='javascript:;')
+						span.thumb
+							span.img(style='background-image: url(#{path.img}dummy/#{sales_note_img[i-1]}.jpg);')
+						div.info
+							h3.tit
+								span.subject= sales_note[i-1]
+							span.etc
+								span.read_cnt 10,658
+								span.like_cnt 23
+//// 노하우 공유 : E
+// 라이프 : S
+div.section
+	h2.tit
+		span 라이프
+		a.all_view(href='javascript:;')
+			span 전체보기
+	div.swiper-container.scroller.type03
+		div.swiper-wrapper
+			- for(var i=1; i <= sales_note.length; i++)
+				div.swiper-slide
+					a(href='javascript:;')
+						span.thumb
+							span.img(style='background-image: url(#{path.img}dummy/#{lifeSquare.img[i-1]}.jpg);')
+						div.info
+							h3.tit
+								span.subject= lifeSquare.title[i-1]
+							span.etc
+								span.read_cnt 10,658
+								span.like_cnt.active 23
+//// 라이프 : E
+// 칭찬합시다 : S
+div.section
+	h2.tit
+		span 칭찬합시다
+		a.all_view(href='javascript:;')
+			span 전체보기
+	ul.thumb_txt_list
+		- for (var i=0; i<praise.img.length; i++)
+			li
+				span.thumb.mask
+					span.img(style='background-image: url(#{path.img}dummy/#{praise.img[i]}.jpg)')
+						span.ir= praise.name[i]
+					//- img(src='#{path.img}dummy/#{praise.img[i]}.jpg')
+				div.txt
+					strong.subject= praise.title[i]
+					p.cont= praise.content[i]
+					span.info
+						span.user_name= praise.name[i]
+						span.official_title= praise.job[i]
+//// 칭찬합시다 : E

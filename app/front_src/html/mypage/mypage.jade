@@ -1,0 +1,55 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.mypage
+				div.my_info
+					a.btn_grade_guide(href='javascript:;')
+						span 등급안내
+					div.my_photo
+						img(src='#{path.img}dummy/myphoto.jpg', alt='내 사진')
+						a.edit(href='toapp:appviewfunction:mypage:profileimg')
+							span.ir 사진수정
+					span.grade.g2 여신
+					span.user_name 유한솔님
+					div.info
+						span.team 경인서비스1팀
+						span.branch 신구로 (영)
+						span.position V=B 전문강사
+				div.container
+					ul.point_list
+						li.current
+							a(href='javascript:;')
+								strong.subject 현재 포인트
+									span.point 18,200P
+								span.cont
+									| 골드 등급까지
+									em 3,000P
+									|  남았습니다.
+						li
+							a(href='javascript:;')
+								strong.subject 나의 교육일정
+									span.point.no 등록된 교육일정이 없습니다.
+						li
+							a(href='javascript:;')
+								strong.subject 나의 교육일정
+									span.point D-7
+						li
+							a(href='javascript:;')
+								strong.subject 나의 보관함
+									span.point 15
+						li
+							a(href='javascript:;')
+								strong.subject 나의 게시글
+									span.point 53
+
+
+
+
+		// ui script load
+		include ../../inc/scripts.jade

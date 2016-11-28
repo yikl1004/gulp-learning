@@ -1,0 +1,48 @@
+include ../../inc/main-data.jade
+ul.tab(class='col#{hotissueTab.length}')
+	- for( var i=0; i<hotissueTab.length; i++ )
+		if i==0
+			li.active
+				a(href='javascript:;')= hotissueTab[i]
+		else
+			li
+				a(href='javascript:;')= hotissueTab[i]
+
+select(class='select_menu', name="")
+	option(value="설화수") 설화수
+	option(value="헤라") 헤라
+	option(value="프라메라") 프라메라
+	option(value="VB") V=B
+	option(value="롤리타렘피카") 롤리타렘피카
+	option(value="일리") 일리
+	option(value="려") 려
+	option(value="본초연구") 본초연구
+
+div.photo_list
+	a(href='#{path.html}01/beautynews_view.html')
+		span(class='thumb')
+			span.img(style='background-image: url(#{path.img}dummy/iu01.jpg);')
+		div.info
+			h3.tit
+				span.subject 아이유는 로엔엔터테인먼트 소속입니다.
+				span.tag.new NEW
+			span.etc.r
+				span.read_cnt 10,658
+				span.like_cnt 23
+				span.reply_cnt 19
+	- for(var i=1; i <= hotissueList.length; i++)
+		a(href='#{path.html}01/beautynews_view.html')
+			span(class= hotissueList[i -1].video ? 'thumb video' : 'thumb')
+				span.img(style='background-image: url(#{path.img}dummy/video_thumb.jpg);')
+			div.info
+				h3.tit
+					span.subject= hotissueList[i-1].title
+					if hotissueList[i -1].new
+						span.tag.new NEW
+					//- if hotissueList[i -1].tag
+					//- 	span(class= 'tag #{hotissueList[i -1].tagColor}')= hotissueList[i -1].tag
+				span.etc.r
+					span.read_cnt 10,658
+					span.like_cnt 23
+					span.reply_cnt 19
+include ../../inc/more_and_top.jade

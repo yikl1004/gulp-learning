@@ -1,0 +1,53 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록";
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div#container
+				ul.tab.col3.multiline
+					- for( var i=0; i<productInfoTab.length; i++ )
+						if i==0
+							li.active
+								a(href='javascript:;')= productInfoTab[i]
+						else
+							li
+								a(href='javascript:;')= productInfoTab[i]
+				//공지사항
+				div.no_data
+					p 등록된 공지사항이 없습니다.
+
+				//나의 교육일정
+				div.no_data
+					p 
+						| 선택하신 기간 내
+						br
+						| 등록된 교육이 없습니다.
+
+				//나의보관함
+				div.no_data
+					p 보관중인 게시물이 없습니다.
+
+				//나의 게시글
+				div.no_data
+					p 작성하신 게시물이 없습니다.
+				
+				//포인트내역
+				div.no_data
+					p
+						| 선택하신 기간 내
+						br
+						| 조회된 포인트 내역이 없습니다
+				//검색결과
+				div.no_data
+					p 검색결과가 없습니다.
+
+				//리스트
+				div.no_data
+					p 게시물이 없습니다.
+
+		// ui script load
+		include ../../inc/scripts.jade

@@ -1,0 +1,15 @@
+include ../../inc/main-data.jade
+- for ( var i = 0; i < prodList.length; i++ )
+	li(class= prodList[i].recommand ? 'recommand' : '')
+		a(href='javascript:;')
+			span(class= prodList[i].video ? 'thumb video' : 'thumb')
+				img(src='#{path.img}dummy/' + prodList[i].img)
+			div.info
+				span.tag
+					- for ( var j = 0; j < prodList[i].tag.length; j++ )
+						span(class= prodList[i].tag[j].klass)= prodList[i].tag[j].text
+				p.title= prodList[i].title
+				span.etc
+					span.read= prodList[i].read
+					span.like= prodList[i].like
+					span.reply= prodList[i].reply

@@ -1,0 +1,130 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.container
+				//- select.select_menu(name='')
+				//- 	option(value='') 전체
+				//- 	option(value='') 뷰티뉴스
+				//- 	option(value='') 제품도서관
+				//- 	option(value='') BEST 노하우
+				//- 	option(value='') 노하우 공유
+				//- 	option(value='') 라이프
+				ul.tab.col3.multiline
+					li.active
+						a(href='javascript:;') 전체
+					li
+						a(href='javascript:;') 뷰티뉴스
+					li
+						a(href='javascript:;') 제품도서관
+					li
+						a(href='javascript:;') BEST 노하우
+					li
+						a(href='javascript:;') 노하우 공유
+					li
+						a(href='javascript:;') 라이프
+				div.archive
+					p.total
+						input#chkAll(type='checkbox')
+						label(for='chkAll')
+							span.ir 선택
+						span
+							| 전체선택(총
+							span.cnt 0
+							|  / 20건)
+						a.btn_normal(href='javascript:;') 선택삭제
+					ul.archive_list
+						li
+							div.action
+								input#chk1(type='checkbox')
+								label(for='chk1')
+									span.ir 선택
+								a.delete(href='javascript:;') 삭제
+							div.item
+								span.thumb
+									img(src='#{path.img}dummy/' + lifeList[0].img)
+								div.info
+									span.path 뷰티뉴스&gt;제품&gt;롤리타램피카
+									p.title 2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!
+									span.etc
+										span.read_cnt 10,658
+										span.like_cnt 23
+										span.reply_cnt 23
+						li
+							div.action
+								input#chk2(type='checkbox' checked='checked')
+								label(for='chk2')
+									span.ir 선택
+								a.delete(href='javascript:;') 삭제
+							div.item
+								span.thumb
+									img(src='#{path.img}dummy/' + lifeList[0].img)
+								div.info
+									span.path 뷰티뉴스&gt;제품&gt;롤리타램피카
+									p.title 2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!
+									span.etc
+										span.read_cnt 10,658
+										span.like_cnt 23
+										span.reply_cnt 23
+						li
+							div.action
+								input#chk3(type='checkbox')
+								label(for='chk3')
+									span.ir 선택
+								a.delete(href='javascript:;') 삭제
+							div.item
+								span.thumb
+									img(src='#{path.img}dummy/' + lifeList[0].img)
+								div.info
+									span.path 뷰티뉴스&gt;제품&gt;롤리타램피카
+									p.title 2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!
+									span.etc
+										span.read_cnt 10,658
+										span.like_cnt 23
+										span.reply_cnt 23
+						li
+							div.action
+								input#chk4(type='checkbox')
+								label(for='chk4')
+									span.ir 선택
+								a.delete(href='javascript:;') 삭제
+							div.item
+								span.thumb
+									img(src='#{path.img}dummy/' + lifeList[0].img)
+								div.info
+									span.path 뷰티뉴스&gt;제품&gt;롤리타램피카
+									p.title 2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!
+									span.etc
+										span.read_cnt 10,658
+										span.like_cnt 23
+										span.reply_cnt 23
+						li
+							div.action
+								input#chk5(type='checkbox')
+								label(for='chk5')
+									span.ir 선택
+								a.delete(href='javascript:;') 삭제
+							div.item
+								span.thumb
+									img(src='#{path.img}dummy/' + lifeList[0].img)
+								div.info
+									span.path 뷰티뉴스&gt;제품&gt;롤리타램피카
+									p.title 2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!
+									span.etc
+										span.read_cnt 10,658
+										span.like_cnt 23
+										span.reply_cnt 23
+
+										
+				include ../../inc/more_and_top.jade
+
+
+
+
+		// ui script load
+		include ../../inc/scripts.jade

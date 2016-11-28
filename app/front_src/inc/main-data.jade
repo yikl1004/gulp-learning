@@ -1,0 +1,338 @@
+-
+	var jsonData = function(){
+			return devDir.replace(/[']/gi, "");
+		},
+		gitPath = jsonData(),
+		siteTitle = gitPath + '아모레퍼시픽 - 뷰티스퀘어',
+		defaultPath = gitPath + '/front/com/',
+		path = {css: defaultPath + 'css', js: defaultPath + 'js', img: gitPath + '/front/img/', html: gitPath + '/front/html/'},
+		loadSource = { 
+			css: ['reset', 'beautysquare', 'plugins/swiper']
+		},
+		//- 네비게이션 ( gnb )
+		menu = ['HOME', '뷰티뉴스', '제품도서관', '세일즈팁', '카운셀러톡', '라이프'],
+
+		//- 메인비주얼 이미지
+		mv_images = ['slide01', 'slide01', 'slide01', 'slide01', 'slide01'],
+		
+		latest_prod = {
+			img: ['prod01', 'prod02', 'prod01', 'prod02', 'prod01'],
+			tag: ['[헤라]', '[설화수]', '[헤라]', '[설화수]', '[헤라]'],
+			title: [
+				'화이트 프로그램 바이오 제닉이펙터',
+				'자정미백 에센스',
+				'화이트 프로그램 바이오 제닉이펙터',
+				'자정미백 에센스',
+				'화이트 프로그램 바이오 제닉이펙터'
+			]
+		},
+		latest_txt_list = [
+			'아이디어의 날개 달고 훨훨 날아보실래요?',
+			'일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+			'비로소, 진정한 미의 전도사가 되다',
+			'메이크업으로 제 2의 전성기를 꿈꿔요!'
+		],
+		sales_note_img = ['prod03', 'prod04', 'prod03', 'prod04', 'prod03'],
+		sales_note = [
+			'일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+			'어떻게 바뀌었나요?',
+			'셀 에센스 어떻게 바뀌었나요? 알려주세요~',
+			'어떻게 바뀌었나요?',
+			'셀 에센스 어떻게 바뀌었나요? 알려주세요~'
+		],
+		lifeSquare = {
+			img: ['life_thumb01', 'life_thumb02', 'life_thumb01', 'life_thumb02', 'life_thumb01'],
+			title: [
+				'일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+				'숙면을 방해하는 잠자리 습관',
+				'피부와 숙면에 좋은 요가를 가르쳐 드립니다~',
+				'숙면을 방해하는 잠자리 습관',
+				'피부와 숙면에 좋은 요가를 가르쳐 드립니다~'
+			]
+		},
+		praise = {
+			img: ['user01', 'user02', 'user03'],
+			title: ['북부팀 홍길동 팀장님!', '북부팀 홍길동 팀장님!', '북부팀 홍길동 팀장님!'],
+			content: [
+				'일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십',
+				'어제 우리 마두특약점(일산에 올해 새로오신 북부팀 홍길동 팀장님이 한턱 쏘셧는데 무리하신건 아닌지 모르겟습니다. 앞으로도 종종 이런자리를 했으면 합니다. 모두들 화이팅!!',
+				'어제 우리 마두특약점(일산에 올해 새로오신 북부팀 홍길동 팀장님이 한턱 쏘셧는데 무리하신건 아닌지 모르겟습니다. 앞으로도 종종 이런자리를 했으면 합니다. 모두들 화이팅!!'
+			],
+			name: ['김숙자', '전지현', '김완선'],
+			job: ['카운셀러', '카운셀러', '카운셀러']
+		},
+
+		//-	서브 탭
+		//- 뷰티뉴스
+		hotissueTab = ['전체', '뷰티 멘토', '제품', '기타'],
+		//- 제품도서관
+		productInfoTab = ['모든 브랜드', '헤라', '설화수', 'VB', '프리메라', '기타'],
+		//- 세일즈 팁
+		salestipTab = ['BEST 노하우', '노하우 공유'],
+		//- 카운셀러톡
+		community = ['칭찬합시다', '궁금해요'],
+		//- 라이프
+		lifeTab = ['전체', '생활정보', '힐링톡'],
+
+		prodList = [
+			{
+				recommand: true,
+				img: 'prodlist_img01.jpg',
+				tag: [
+					{
+						klass: 'recommand',
+						text: '기획상품'
+					},
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '[헤라]선 메이트 프로텍터 SPF 50+/PA+++',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'prodlist_img02.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '[헤라]화이트 프로그램 이펙터',
+				read: '10,658',
+				like: 23,
+				reply: 44,
+				video: true
+			},
+			{
+				img: 'prodlist_img03.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '[설화수]리치 볼륨 마스카라 - 79호 래쉬 블랙',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'prodlist_img04.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '[헤라 옴므]옴므 블랙 퍼펙트 스킨',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'prodlist_img05.jpg',
+				tag: [],
+				title: '[헤라]쉬어 플루이드 파운데이션 -23호 트루 베이지',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			}
+		],
+
+		//- 칭찬합시다 목록
+		praiseList = [
+			{
+				idPicture: 'user01.jpg',
+				name: '박소영',
+				branch: '구로디지털(방)',
+				isJob: '메이크업리더',
+				updateTime: '2시간전',
+				updateTimeBg: true,
+				title: '수성특약점 가족 모두를 칭찬합니다.',
+				new: true,
+				txt: '황영재사장님에 마음이 담긴 더치커피를 내려서 출근하는 카운셀러분들께 한잔씩을 주시는 걸 기분 좋게 하루를 출발합니다. 누구라고 말 할 수는 없겠습니다만 어쨋든 우리모두 화이팅 합시다!!!',
+				img: 'content_img01.jpg',
+				read: '345',
+				like: '42',
+				reply: '274'
+			},
+			{
+				idPicture: 'user02.jpg',
+				name: '김보배',
+				branch: '신구로 영업소',
+				updateTime: '2월28일 오후1:30',
+				updateTimeBg: true,
+				title: '지킴이 님들 칭찬합니다.',
+				new: false,
+				txt: '저는 애벌레입니다. 여기 들락날락한지가 얼마 되질 않습니다. 어딜가던지 밴드 활동 열심히 하시는 분들 정말 대단하신데요. 저는 ...',
+				read: '1,703',
+				like: '21',
+				reply: '69'
+			},
+			{
+				idPicture: 'user03.jpg',
+				name: '하찬은',
+				branch: '송파 영업소',
+				isJob: '메이크업리더',
+				updateTime: '1월28일 오전1:30',
+				updateTimeBg: true,
+				title: '칭찬하고 싶어요!!!^^♡',
+				new: false,
+				txt: '황영재사장님에 마음이 담긴 더치커피를 내려서 출근 하는 카운셀러분들께 한잔씩을 주시는 걸 기분 좋게 하루를 출발합니다. 누구라고 ...',
+				read: '1,703',
+				like: '21',
+				reply: '69'
+			}
+		],
+
+		//- 핫이슈 목록
+		hotissueList = [
+			{
+				title: "[뷰티 멘토] 셀 에센스 어떻게 바뀌었나요?",
+				video: true,
+				new: true,
+				tag: '설화수',
+				tagColor: 'yellow'
+			},
+			{
+				title: "[제품] 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+				video: false,
+				new: true,
+				tag: '롤리타렘피카',
+				tagColor: 'pink'
+			},
+			{
+				title: "[제품] 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+				video: true,
+				new: true,
+				tag: '설화수',
+				tagColor: 'yellow'
+			},
+			{
+				title: "[제품] 일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십일이삼사오육칠팔구십",
+				video: false,
+				new: true,
+				tag: '설화수',
+				tagColor: 'yellow'
+			}
+		],
+
+		//- 세일즈 팁 리스트
+		salestipList = [
+			{
+				recommand: true,
+				img: 'sales_tip_img01.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'sales_tip_img02.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44,
+				video: true
+			},
+			{
+				img: 'sales_tip_img03.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'sales_tip_img01.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'sales_tip_img02.jpg',
+				tag: [],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			}
+		],
+
+		//- 라이프 리스트
+		lifeList = [
+			{
+				img: 'sales_tip_img01.jpg',
+				tag: [
+					{
+						klass: 'new',
+						text: 'new'
+					}
+				],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'sales_tip_img02.jpg',
+				tag: [],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44,
+				video: true
+			},
+			{
+				img: 'sales_tip_img03.jpg',
+				tag: [],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'sales_tip_img01.jpg',
+				tag: [],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			},
+			{
+				img: 'sales_tip_img02.jpg',
+				tag: [],
+				title: '2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!',
+				read: '10,658',
+				like: 23,
+				reply: 44
+			}
+		];

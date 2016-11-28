@@ -1,0 +1,56 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "세일즈팁 | 카운셀러 세일즈 노트 | 목록";
+//- doctype html
+//- html(lang='ko')
+//- 	include ../../inc/head.jade
+//- 	body.sub
+//- 		div#wrap
+//- 			div#container
+ul.tab.col2
+	- for( var i=0; i<salestipTab.length; i++ )
+		if i==1
+			li.active
+				a(href='#{path.html}03/sales_tip_list_knowhowshare.html')= salestipTab[i]
+		else
+			li
+				a(href='#{path.html}03/sales_tip_list_bestknowhow.html')= salestipTab[i]
+div.knowhowlist
+	- for ( var i=0; i<praiseList.length; i++ )
+		div.fb_type
+			div.article
+				div.user_info
+					span.thumb.mask
+						span.img(style='background-image: url(#{path.img}dummy/#{praiseList[i].idPicture});')
+							span.ir praiseList[i].name
+					div(class='info #{praiseList[i].isJob ? "" : "no_job"}')
+						span.employee
+							span.tag_and_position
+								span.grade.g1 여왕
+								if praiseList[i].isJob
+									span.position= praiseList[i].isJob
+								span.tag.new new
+							span.name= praiseList[i].name
+							span.branch= praiseList[i].branch
+					div.update_time.today= praiseList[i].updateTime
+				div.content
+					h3.tit
+						span= praiseList[i].title
+					p.txt= praiseList[i].txt
+						a.more(href='#{path.html}03/sales_tip_view_knowhowshare.html') ...더보기
+					if praiseList[i].img
+						span.article_img
+							img(src='#{path.img}dummy/#{praiseList[i].img}')
+			div.etc_btns
+				a.reply(href='javascript:;')
+					span= praiseList[i].read
+					span.ir 댓글쓰기
+				a.bookmark(href='javascript:;')
+					span.no_cnt
+					span.ir 보관함 담기
+				a.like(href='javascript:;')
+					span= praiseList[i].reply
+					span.ir 좋아요
+include ../../inc/more_and_top.jade
+
+//- // ui script load
+//- include ../../inc/scripts.jade

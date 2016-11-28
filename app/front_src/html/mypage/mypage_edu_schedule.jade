@@ -1,0 +1,54 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.container
+				ul.tab.col4
+					li.active
+						a(href="javascript:;") 1개월
+					li
+						a(href="javascript:;") 3개월
+					li
+						a(href="javascript:;") 6개월
+					li
+						a(href="javascript:;") 12개월
+				div.mypage_list
+					span.date 2016.03.14 ~ 2016.04.14
+					ul.saving_list
+						li
+							strong.subject [전문] 메이크업전문강사 STEP1
+							p.edu_cont
+								span 부산-경남교육장
+								span 2016.03.03 ~ 2016.03.09
+						li
+							strong.subject [채움] CC&amp;쿠션실무
+							p.edu_cont
+								span 대전-청주교육장
+								span 2016.03.03 ~ 2016.03.09
+						li
+							strong.subject [전문] 메이크업전문강사 STEP1
+							p.edu_cont
+								span 부산-경남교육장
+								span 2016.03.03 ~ 2016.03.09
+						li
+							strong.subject [채움] CC&amp;쿠션실무
+							p.edu_cont
+								span 대전-청주교육장
+								span 2016.03.03 ~ 2016.03.09
+						li
+							strong.subject [전문] 메이크업전문강사 STEP1
+							p.edu_cont
+								span 부산-경남교육장
+								span 2016.03.03 ~ 2016.03.09
+				
+
+
+
+
+		// ui script load
+		include ../../inc/scripts.jade

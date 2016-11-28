@@ -1,0 +1,25 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.view_page.notice
+				h1.view_head
+					span 3월 15일 0시 서비스 점검 공지
+					span.date 2015.03.14
+				div.view_content
+					p
+						|안녕하세요 방판교육팀 입니다.안정적인 서비스제
+						|공을 위하여3월 15일(화) 00:00~06:00 까지 
+						|시스템점검을진행합니다.
+						|점검중에는 뷰티스퀘어 접속이 불가하니 유의해
+						|주시기 바랍니다.
+						|서비스 제공에 불편을 드려 죄송합니다.
+
+
+		// ui script load
+		include ../../inc/scripts.jade

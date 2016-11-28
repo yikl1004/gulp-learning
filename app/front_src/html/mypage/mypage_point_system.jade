@@ -1,0 +1,86 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.container
+				ul.tab.col2
+					li.active
+						a(href="javascript:tab('saving');") 적립
+					li
+						a(href="javascript:tab('cut');") 차감
+				table.saving
+					colgroup
+						col(style='width: 29.667%;')
+						col(style='width: auto;')
+					tbody
+						tr
+							th 로그인
+							td 5P 지급, 1일 1회 제한
+						tr
+							th
+								| 노하우 공유
+								br
+								| 글작성
+							td 15P 지급, 1일 1회 제한
+						tr
+							th 댓글쓰기
+							td 3P 지급, 1일 3회 제한
+								p.warn ※궁금해요 게시판의 경우 제외
+						tr
+							th
+								| BEST
+								br
+								| 노하우 선정
+							td 500P 지급
+						tr
+							th
+								| BEST
+								br
+								| 댓글 선정
+							td 200P 지급
+						tr
+							th 이벤트 참여
+							td 10P 지급
+						tr
+							th 깜짝 이벤트
+							td 100P 지급
+						tr
+							th 좋아요
+							td 해당 게시물 작성자에게 1P 지급
+								p.warn ※게시물 당 최대 20P까지 획득 가능
+
+				table.cut(style='display: none;')
+					colgroup
+						col(style='width: 50%;')
+						col(style='width: 50%;')
+					tbody
+						tr
+							th 노하우 공유 글삭제
+							td 15P 차감
+						tr
+							th 2주 이상 미접속
+							td 100P 차감
+						tr
+							th 1달 이상 미접속
+							td 1,000P 차감
+						tr
+							th 3달 이상 미접속
+							td 5,000P 차감
+
+				p.msg * 포인트 제도는 내부사정에 따라 변경 될 수 있습니다.
+
+
+
+
+		// ui script load
+		include ../../inc/scripts.jade
+		script.
+			function tab( menu ) {
+				$('.cut, .saving').hide();
+				$( '.' + menu ).show();
+			}

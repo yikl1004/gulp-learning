@@ -1,0 +1,38 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "세일즈팁 | 카운셀러 세일즈 노트 | 목록";
+//- doctype html
+//- html(lang='ko')
+//- 	include ../../inc/head.jade
+//- 	body.sub
+//- 		div#wrap
+//- 			div#container
+ul.tab.col2
+	- for( var i=0; i<salestipTab.length; i++ )
+		if i==0
+			li.active
+				a(href='javascript:;')= salestipTab[i]
+		else
+			li
+				a(href='javascript:;')= salestipTab[i]
+div.img_list.type02
+	ul
+		- for ( var i = 0; i < salestipList.length; i++ )
+			li
+				a(href='#{path.html}03/sales_tip_view_bestknowhow.html')
+					span(class= salestipList[i].video ? 'thumb video' : 'thumb')
+						span.img(style='background-image: url(#{path.img}dummy/#{salestipList[i].img});')
+					div(class= salestipList[i].tag.length > 0 ? 'info' : 'info no_tag')
+						if salestipList[i].tag.length > 0
+							span.tags
+								- for ( var j = 0; j < salestipList[i].tag.length; j++ )
+									span(class= 'tag ' + salestipList[i].tag[j].klass)= salestipList[i].tag[j].text
+						p.title= salestipList[i].title
+						span.etc
+							span.read_cnt= salestipList[i].read
+							span.like_cnt= salestipList[i].like
+							span.reply_cnt= salestipList[i].reply
+include ../../inc/more_and_top.jade
+
+
+//- // ui script load
+//- include ../../inc/scripts.jade

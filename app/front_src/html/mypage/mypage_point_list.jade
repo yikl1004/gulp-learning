@@ -1,0 +1,54 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.current_point
+				strong.subject 현재포인트
+					span.point 18,200P
+			div.container
+				ul.tab.col4
+					li.active
+						a(href="javascript:;") 1개월
+					li
+						a(href="javascript:;") 3개월
+					li
+						a(href="javascript:;") 6개월
+					li
+						a(href="javascript:;") 12개월
+
+				div.mypage_list
+					span.date 2016.03.14 ~ 2016.04.14
+					a.btn_normal(href='javascript:;') 포인트 안내
+					ul.saving_list
+						li
+							strong.subject 로그인 포인트 적립
+								span.point.plus 5
+							span.saving_date 2016.04.14
+						li
+							strong.subject 비접속 포인트 차감(2주)
+								span.point.minus 100
+							span.saving_date 2016.03.21
+						li
+							strong.subject 게시글 작성
+								span.point.plus 5
+							span.saving_date 2016.03.18
+						li
+							strong.subject 비접속 포인트 차감(2주)
+								span.point.minus 210
+							span.saving_date 2016.03.21
+						li
+							strong.subject 게시글 작성
+								span.point.plus 10
+							span.saving_date 2016.03.18
+				
+
+
+
+
+		// ui script load
+		include ../../inc/scripts.jade

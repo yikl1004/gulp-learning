@@ -1,0 +1,147 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.view_page.notice
+				h1.view_head
+					span 2월엔 촉촉해지세요! 셀 에센스 4주차 이벤트!
+					span.date 2015.03.14 ~ 2015.06.20
+				div.view_content
+					table.wins_list
+						colgroup
+							col(style='width: 30%;')
+							col(style='width:auto;')
+							col(style='width:auto;')
+							col(style='width:auto;')
+						thead
+							tr
+								th(colspan='4') 당첨자 발표
+						tbody
+							tr
+								td 강북영업1팀
+								td 드림(방)
+								td 홍길동
+								td 11YD0356
+							tr
+								td 강북영업1팀
+								td 드림(방)
+								td 홍길동
+								td 11YD0356
+							tr
+								td 강북영업1팀
+								td 드림(방)
+								td 홍길동
+								td 11YD0356
+							tr
+								td 강북영업1팀
+								td 드림(방)
+								td 홍길동
+								td 11YD0356
+							tr
+								td 강북영업1팀
+								td 드림(방)
+								td 홍길동
+								td 11YD0356
+					p.msg.red ※당첨되신 카운셀러 여러분 모두 축하드립니다.
+
+				div.view_content
+					img(src='#{path.img}dummy/view_img01.jpg', alt='')
+					p 
+						| 안녕하세요 방판교육팀 입니다.안정적인 서비스제 공을 위하여3월 15일(화) 00:00~06:00 까지 시스템점검을진행합니다.
+						br
+						br
+						| 점검중에는 뷰티스퀘어 접속이 불가하니 유의해 주시기 바랍니다.
+						br
+						br
+						| 서비스 제공에 불편을 드려 죄송합니다.
+
+			div.container
+				h2.tit.small
+					span 이벤트 참여
+					span.cnt 19
+				ul.reply_list
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user02.jpg);')
+								span.ir 장재호
+							span.info
+								span.grade.g2 여신
+								span.user_name 장재호
+									span.branch 신구로 (영)
+							span.update_time.today 2시간 전
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user03.jpg);')
+								span.ir 강감찬
+							span.info
+								span.grade.g6 뷰티스타
+								span.user_name 강감찬
+									span.branch 신구로 (영)
+							span.update_time 2월 13일
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user02.jpg);')
+								span.ir 장재호
+							span.info
+								span.grade.g2 여신
+								span.user_name 장재호
+									span.branch 신구로 (영)
+							span.update_time.today 2시간 전
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+					li
+						span.user_info
+							span.thumb.mask(style='background-image: url(#{path.img}dummy/user03.jpg);')
+								span.ir 강감찬
+							span.info
+								span.grade.g6 뷰티스타
+								span.user_name 강감찬
+									span.branch 신구로 (영)
+							span.update_time 2월 13일
+						p.txt
+							span.answer
+								span.title 질문1
+								| : 헤라
+							span.answer
+								span.title 질문2
+								| : 헤라 셀 에센스 대박티스퀘어 커뮤니티
+							span.answer
+								span.title 질문3
+								| : 뷰티스퀘어 커뮤니티
+
+
+		// ui script load
+		include ../../inc/scripts.jade

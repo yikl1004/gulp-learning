@@ -1,0 +1,75 @@
+include ../../inc/main-data.jade
+//- - var subTitle = "제품정보 | 목록"
+doctype html
+html(lang='ko')
+	include ../../inc/head.jade
+	body.sub
+		div.loading
+			span.loader
+		div#wrap
+			div.container
+				p.normal_txt.c 열심히 활동해서 뷰티스타가 되어보세요!
+				table.grade_guide
+					colgroup
+						col(style='width:33.111%;')
+						col(style='width:auto;')
+					tbody
+						tr
+							th
+								span.grade.g6
+								p 뷰티스타
+							td
+								p 
+									| 보유 포인트 15,000P 이상 
+									br
+									| 노하우 공유 등록
+									strong 10개 이상
+									br
+									| 우수댓글 채택
+									strong 3회 이상
+						tr
+							th
+								span.grade.g5
+								p 여신
+							td
+								p 
+									| 보유 포인트 10,000P 이상
+									br
+									| 노하우 공유 등록
+									strong 5개 이상
+						tr
+							th
+								span.grade.g4
+								p 여왕
+							td
+								p 
+									| 보유 포인트 5,000P 이상
+						tr
+							th
+								span.grade.g3
+								p 공주
+							td
+								p 
+									| 보유 포인트 2,000P 이상
+						tr
+							th
+								span.grade.g2
+								p 미녀
+							td
+								p 
+									| 보유 포인트 500P 이상
+						tr
+							th
+								span.grade.g1
+								p 쌩얼
+							td
+								p 
+									| 보유 포인트 500P 이하
+
+				p.msg * 회원등급 기준은 내부사정에 따라 변경 될 수 있습니다.
+
+
+
+
+		// ui script load
+		include ../../inc/scripts.jade
